@@ -28,6 +28,6 @@ public class FriendReferenceService : Service {
 	public IObservable<Quest> GetQuestWithId(int id)
 			=> Request<Quest>($"/quest/{id}", HttpMethod.GET);
 
-	public IObservable<Quest[]> GetQuestThatUserDoing(int id) 
-			=> RequestArray<Quest>($"/user/{id}/quests", HttpMethod.GET);
+	public IObservable<UserDoingQuest[]> GetQuestThatUserDoing(int id) 
+			=> RequestArray<UserDoingQuest>($"/user/{id}/quests", HttpMethod.GET);
 }
