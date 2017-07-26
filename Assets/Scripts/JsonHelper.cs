@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class JsonHelper : MonoBehaviour {
-	public T[] FromJsonArray<T>(string json) {
+	public static T[] FromJsonArray<T>(string json) {
 		string newJson = string.Format("{\"array\": {0}}", json);
 		Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>> (newJson);
 		return wrapper.array;
