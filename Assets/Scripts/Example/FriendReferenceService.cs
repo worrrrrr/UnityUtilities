@@ -23,11 +23,11 @@ public class FriendReferenceService : Service {
 	public FriendReferenceService(string baseUrl) : base(baseUrl) {}
 
 	public IObservable<User> GetUserWithId(int id) 
-			=> Request<User>($"/user/{id}", HttpMethod.GET);
+			=> Get<User>($"/user/{id}", HttpMethod.GET);
 
 	public IObservable<Quest> GetQuestWithId(int id)
-			=> Request<Quest>($"/quest/{id}", HttpMethod.GET);
+			=> Get<Quest>($"/quest/{id}", HttpMethod.GET);
 
 	public IObservable<UserDoingQuest[]> GetQuestThatUserDoing(int id) 
-			=> RequestArray<UserDoingQuest>($"/user/{id}/quests", HttpMethod.GET);
+			=> GetArray<UserDoingQuest>($"/user/{id}/quests", HttpMethod.GET);
 }
