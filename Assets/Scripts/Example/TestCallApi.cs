@@ -8,11 +8,19 @@ public class TestCallApi : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		FriendReferenceService friendReferenceService = new FriendReferenceService(baseUrl: "https://friend.digitopolisstudio.com");
-		friendReferenceService.GetUserWithId(id: 1).Subscribe(
+		friendReferenceService.GetQuestThatUserDoing(id: 44).Subscribe(
+			userDoingQuests => {
+				
+			},
+			error => {
+
+			}
+		);
+		friendReferenceService.GetUserWithId(id: 44).Subscribe(
 			user => {
-				Debug.Log(user.id);
-				Debug.Log(user.reference_code);
-				Debug.Log(user.status);
+				// Debug.Log(user.id);
+				// Debug.Log(user.reference_code);
+				// Debug.Log(user.status);
 			},
 			error => Debug.LogException(error));
 	}

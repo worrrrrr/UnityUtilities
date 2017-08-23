@@ -54,7 +54,7 @@ public class Service {
 							yield break;
 						}
 
-						if (www.isNetworkError) {
+						if (www.isNetworkError || www.isHttpError) {
 							observer.OnError(new Exception(www.error));
 						} else {
 							observer.OnNext(JsonUtility.FromJson<T>(www.downloadHandler.text));
@@ -102,7 +102,7 @@ public class Service {
 		string url = $"{m_baseUrl}{path}";
 		
 		switch (httpMethod) {
-			case HttpMethod.POST:
+			case HttpMethod.POST: 
 				using (UnityWebRequest www = UnityWebRequest.Post(url, formData)) {
 					www.Send();
 					while (!www.isDone && !cancellationToken.IsCancellationRequested) {
