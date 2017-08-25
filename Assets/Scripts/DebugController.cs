@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DebugController : MonoBehaviour {
 	void Start () {
-		#if DEVELOPMENT_BUILD
-			Debug.unityLogger.logEnabled = true;
-		#else
-			Debug.unityLogger.logEnabled = false;
-		#endif	
+		// #if DEVELOPMENT_BUILD
+		// 	Debug.unityLogger.logEnabled = true;
+		// #else
+		// 	Debug.unityLogger.logEnabled = false;
+		// #endif	
 	}
 }

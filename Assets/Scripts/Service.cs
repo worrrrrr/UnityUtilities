@@ -57,8 +57,13 @@ public class Service {
 						if (www.isNetworkError || www.isHttpError) {
 							observer.OnError(new Exception(www.error));
 						} else {
-							observer.OnNext(JsonUtility.FromJson<T>(www.downloadHandler.text));
-							observer.OnCompleted();
+							if (www.responseCode == 200) {
+								observer.OnNext(JsonUtility.FromJson<T>(www.downloadHandler.text));
+								observer.OnCompleted();
+							} else {
+								observer.OnNext(default(T));
+								observer.OnCompleted();
+							}
 						}
 					}
 					break;
@@ -87,8 +92,13 @@ public class Service {
 						if (www.isNetworkError || www.isHttpError) {
 							observer.OnError(new Exception(www.error));
 						} else {
-							observer.OnNext(JsonHelper.FromJsonArray<T>(www.downloadHandler.text));
-							observer.OnCompleted();
+							if (www.responseCode == 200) {
+								observer.OnNext(JsonHelper.FromJsonArray<T>(www.downloadHandler.text));
+								observer.OnCompleted();
+							} else {
+								observer.OnNext(default(T[]));
+								observer.OnCompleted();
+							}
 						}
 					}
 					break;

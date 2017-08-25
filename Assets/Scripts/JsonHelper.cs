@@ -3,11 +3,12 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class JsonHelper : MonoBehaviour {
 	public static T[] FromJsonArray<T>(string json) {
-		string newJson = string.Format("{\"array\": {0}}", json);
+		string newJson = new StringBuilder().Append("{\"array\": ").Append(json).Append("}").ToString();
 		Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>> (newJson);
 		return wrapper.array;
 	}
