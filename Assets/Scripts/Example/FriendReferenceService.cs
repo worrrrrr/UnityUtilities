@@ -1,11 +1,13 @@
 ﻿using UniRx;
 
+[System.Serializable]
 public struct User {
 	public int id;
 	public string reference_code;
 	public string status;
 }
 
+[System.Serializable]
 public struct UserDoingQuest {
 	public int user_id;
 	public int quest_id;
@@ -13,6 +15,7 @@ public struct UserDoingQuest {
 	public bool is_success;
 }
 
+[System.Serializable]
 public struct Quest {
 	public int id;
 	public string name;
