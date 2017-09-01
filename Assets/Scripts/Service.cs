@@ -2,9 +2,11 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Networking;
 using UniRx;
+
 
 public enum HttpMethod {
 	GET,

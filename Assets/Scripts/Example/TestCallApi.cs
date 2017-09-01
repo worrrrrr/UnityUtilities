@@ -20,6 +20,7 @@ public class TestCallApi : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		FriendReferenceService friendReferenceService = new FriendReferenceService(baseUrl: "https://friend.digitopolisstudio.com");
+
 		friendReferenceService.GetQuests().Subscribe(
 			quests => {
 				foreach (Quest quest in quests) {
