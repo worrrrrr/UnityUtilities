@@ -9,7 +9,9 @@ pipeline {
     stage('Test') {
       steps {
         sh '''java -version
-node -version'''
+nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                    sh 'npm config ls'
+                }'''
       }
     }
     stage('Build') {
