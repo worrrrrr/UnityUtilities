@@ -1,12 +1,17 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node'
+    }
+    
+  }
   stages {
     stage('Initialize') {
       steps {
         parallel(
           "Initialize": {
             echo 'Add minimal Pipeline'
-            sh 'echo "Hello World"'
+            sh 'npm install'
             
           },
           "Path": {
