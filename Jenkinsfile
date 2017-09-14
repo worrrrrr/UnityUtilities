@@ -4,6 +4,7 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Add minimal Pipeline'
+        sh 'echo "Hello World"'
       }
     }
   }
