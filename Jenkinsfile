@@ -11,7 +11,6 @@ pipeline {
         parallel(
           "Initialize": {
             echo 'Add minimal Pipeline'
-            sh 'npm install'
             
           },
           "Path": {
@@ -19,11 +18,6 @@ pipeline {
             
           }
         )
-      }
-    }
-    stage('Install') {
-      steps {
-        sh 'echo PATH = ${PATH}'
       }
     }
   }
