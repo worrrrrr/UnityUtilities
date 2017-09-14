@@ -1,9 +1,24 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Initialize') {
       steps {
-        echo 'Add minimal Pipeline'
+        echo 'Start building UnityUtilities'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'echo "Test Success"'
+      }
+    }
+    stage('Build') {
+      steps {
+        echo 'Building..'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Success'
       }
     }
   }
