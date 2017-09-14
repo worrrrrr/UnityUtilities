@@ -8,18 +8,20 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'echo "Test Success"'
+        sh '''node {
+  echo "Test Success"
+}'''
+        }
       }
-    }
-    stage('Build') {
-      steps {
-        echo 'Building..'
+      stage('Build') {
+        steps {
+          echo 'Building..'
+        }
       }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Success'
+      stage('Deploy') {
+        steps {
+          echo 'Success'
+        }
       }
     }
   }
-}
