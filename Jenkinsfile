@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Initialize') {
       steps {
@@ -9,7 +9,7 @@ pipeline {
     stage('Test') {
       steps {
         sh '''node {
-  echo "Test Success"
+Â  echo "Test Success"
 }'''
         }
       }
