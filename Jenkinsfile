@@ -3,8 +3,17 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        echo 'Add minimal Pipeline'
-        sh 'echo "Hello World"'
+        parallel(
+          "Initialize": {
+            echo 'Add minimal Pipeline'
+            sh 'echo "Hello World"'
+            
+          },
+          "Path": {
+            sh 'echo PATH = ${PATH}'
+            
+          }
+        )
       }
     }
     stage('Install') {
