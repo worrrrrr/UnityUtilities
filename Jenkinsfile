@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Install') {
       steps {
-        sh 'npm install'
+        sh 'echo PATH = ${PATH}'
       }
     }
   }
