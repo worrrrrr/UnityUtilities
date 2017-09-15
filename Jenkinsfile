@@ -13,14 +13,13 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'java -version'
-        sh '''echo PATH = ${PATH}
-'''
+        echo 'Testing'
+        sh 'npm --version'
       }
     }
     stage('Build') {
       steps {
-        echo 'Building..'
+        echo 'Building'
       }
     }
     stage('Deploy') {
