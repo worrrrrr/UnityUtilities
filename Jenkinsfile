@@ -9,7 +9,6 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Start building UnityUtilities'
-        sh 'mvn clean'
       }
     }
     stage('Test') {
