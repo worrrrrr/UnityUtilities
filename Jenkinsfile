@@ -9,13 +9,12 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Start building UnityUtilities'
-        waitForQualityGate()
       }
     }
     stage('Test') {
       steps {
         echo 'Testing'
-        sh 'npm --version'
+        sh 'pwd'
       }
     }
     stage('Build') {
