@@ -11,6 +11,7 @@ pipeline {
         echo 'Start building UnityUtilities'
         sh '''node --version
  '''
+        tool 'recent node'
       }
     }
     stage('Test') {
