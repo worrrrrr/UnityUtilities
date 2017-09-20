@@ -9,9 +9,9 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Start building UnityUtilities'
-        sh '''  withSonarQubeEnv('SonarQube') {
-      sh "${Sonarqube}/bin/sonar-scanner"
-  }
+        sh '''withSonarQubeEnv('SonarQube') {
+      sh "sonar-scanner"
+}
  '''
         }
       }
