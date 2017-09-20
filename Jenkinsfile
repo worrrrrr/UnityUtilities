@@ -9,7 +9,12 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Start building UnityUtilities'
-        waitForQualityGate()
+        sh '''
+    def scannerHome = tool 'Sonarqube';
+    withSonarQubeEnv('SonarQube') {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+ '''
       }
     }
     stage('Test') {
