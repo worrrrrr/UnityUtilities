@@ -9,27 +9,25 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Start building UnityUtilities'
-        sh '''withSonarQubeEnv('SonarQube') {
-      sh 'sonar-scanner'
-}
+        sh '''node --version
  '''
-        }
       }
-      stage('Test') {
-        steps {
-          echo 'Testing'
-          sh 'pwd'
-        }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing'
+        sh 'pwd'
       }
-      stage('Build') {
-        steps {
-          echo 'Building'
-        }
+    }
+    stage('Build') {
+      steps {
+        echo 'Building'
       }
-      stage('Deploy') {
-        steps {
-          echo 'Success'
-        }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Success'
       }
     }
   }
+}
